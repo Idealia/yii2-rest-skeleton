@@ -1,0 +1,22 @@
+RewriteEngine on
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php
+
+#SetEnvIf Origin "^http(s)?://(.+\.)?(icp\.pl|icproject\.com|lp\.icp\.yum\.pl)$" origin_is=$0
+#Header always set Access-Control-Allow-Origin %{origin_is}e env=origin_is
+
+Header set Access-Control-Allow-Methods "POST, GET, OPTIONS, PUT, DELETE"
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Credentials true
+Header set Access-Control-Allow-Headers "Content-Type"
+
+FileETag None
+Header unset ETag
+Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+Header set Pragma "no-cache"
+Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
