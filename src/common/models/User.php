@@ -33,12 +33,12 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface, OAuth2Iden
         return 'user';
     }
 
-    public function behaviors()
-    {
-        return [
-            'date' => TimestampBehavior::class
-        ];
-    }
+//    public function behaviors()
+//    {
+//        return [
+//            'date' => TimestampBehavior::class
+//        ];
+//    }
 
     public function fields()
     {
@@ -63,6 +63,7 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface, OAuth2Iden
             [['email', 'password_hash', 'password_reset_token'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
             [['email'], 'unique'],
+            [['email'], 'email'],
             [['password_reset_token'], 'unique'],
         ];
     }

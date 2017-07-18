@@ -20,9 +20,14 @@ Update database settings in *src/common/config/local.php*
 $ php yii migrate
 ```
 
-# make documentation
+# Make documentation
 ```bash
 $ sudo npm install -g apidoc
 $ chmod +x doc.sh
 $ ./doc.sh
+```
+
+# Testing
+```bash
+vendor/bin/codecept run 
 ```
