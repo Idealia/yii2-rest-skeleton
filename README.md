@@ -4,7 +4,7 @@ Yii2 REST app skeleton with oAuth2 authorization.
 ## Install
 ### Vendors
 ```bash
-$ composer global require "fxp/composer-asset-plugin:^1.2.0"
+$ composer global require "fxp/composer-asset-plugin:^1.3.1"
 $ composer install
 ```
 ### Create unversioned files
