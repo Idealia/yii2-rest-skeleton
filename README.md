@@ -20,12 +20,24 @@ Update database settings in *src/common/config/local.php*
 $ php yii migrate
 ```
 
-## Make documentation
+## API documentation
+Based on [http://apidocjs.com](http://apidocjs.com)
+
+### First do it
 ```bash
-$ sudo npm install -g apidoc
-$ chmod +x doc.sh
-$ ./doc.sh
+$ apt-get install node
+$ npm install -g apidoc
+$ chmod +x generate-docs.sh
 ```
+### Generate docs after adding new functionality
+```bash
+$ ./generate-docs.sh
+```
+### Simple preview in browser
+```bash
+php -S localhost:8090 -t api-doc
+```
+then open [http://localhost:8090](http://localhost:8090) in Your browser
 
 ## Testing
 ```bash
