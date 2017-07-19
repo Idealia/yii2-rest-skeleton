@@ -3,7 +3,7 @@
  * Copyright (c) 2017. Piotr Grzelka <piotr.grzelka@idealia.pl>
  */
 
-class m170704_083716_init extends \app\components\db\Migration
+class m170704_083716_init extends \common\components\db\Migration
 {
     public function safeUp()
     {

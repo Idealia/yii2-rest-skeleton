@@ -6,18 +6,18 @@
 namespace rest\versions\v1\controllers;
 
 /**
- * @api {post} /token Logowanie za pomocą oAuth2
- * @apiName Logowanie
- * @apiGroup Autoryzacja
+ * @api {post} /token oAuth2 token endpoint
+ * @apiName Sign in
+ * @apiGroup Auth
  * @apiVersion 0.1.0
  * @apiPermission none
  *
- * @apiParam {String=232af83f-1013-4729-bce2-8a19af6b9240} client_id Adres email.
- * @apiParam {String=password,refresh_token} grant_type Adres email.
- * @apiParam {String} username Adres email.
- * @apiParam {String} password Hasło.
+ * @apiParam {String} client_id Oauth Client Id.
+ * @apiParam {String=password,refresh_token} grant_type oAuth grant type.
+ * @apiParam {String} username User login (email address).
+ * @apiParam {String} password User password.
  *
- * @apiSampleRequest https://fapi.dev/token
+ * @apiSampleRequest https://api.dev/token
  *
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK

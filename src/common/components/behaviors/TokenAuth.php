@@ -3,24 +3,21 @@
  * Copyright (c) 2017. Piotr Grzelka <piotr.grzelka@idealia.pl>
  */
 
-/**
- * Created by PhpStorm.
- * User: piotrek
- * Date: 04.07.17
- * Time: 15:31
- */
 
 namespace common\components\behaviors;
 
-
+/**
+ * Class TokenAuth
+ * @package common\components\behaviors
+ */
 class TokenAuth extends \conquer\oauth2\TokenAuth
 {
 
 
     /**
-     * Dodatkowe warunki dla oAuth2
+     * Additional rules for oAuth2
      *
-     * @param \yii\base\Action $action Akcja
+     * @param \yii\base\Action $action Performed action
      *
      * @return bool
      * @throws \Exception

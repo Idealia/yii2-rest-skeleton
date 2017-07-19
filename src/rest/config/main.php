@@ -4,8 +4,8 @@
  */
 
 $config = [
-    'id' => 'basic',
-    'language' => 'pl',
+    'id' => 'rest-api',
+    'language' => 'en',
     'basePath' => __ROOT__,
     'bootstrap' => ['log'],
     'modules' => [
