@@ -12,7 +12,7 @@ Thumbs.db
 /vendor
 /src/rest/web/index.php
 /yii
-/doc/
+/api-doc/
 /src/console/config/local.php
 /src/common/config/local.php
 /src/rest/config/local.php
@@ -21,3 +21,4 @@ Thumbs.db
 /tests/_output/
 !/tests/_support/.gitkeep
 !/tests/_output/.gitkeep
+/src/console/runtime/logs/app.log
