@@ -3,37 +3,30 @@
  * Copyright (c) 2017. Piotr Grzelka <piotr.grzelka@idealia.pl>
  */
 
-/**
- * Created by PhpStorm.
- * User: piotrek
- * Date: 04.07.17
- * Time: 10:34
- */
 
 namespace rest\versions\v1\controllers;
-
 
 use rest\versions\v1\models\RegisterForm;
 use yii\rest\Controller;
 
 /**
- * @api {post} /register Rejestracja nowego użytkownika
- * @apiName Rejestracja
- * @apiGroup Autoryzacja
+ * @api {post} /register New user registration
+ * @apiName Registration
+ * @apiGroup Auth
  * @apiVersion 0.1.0
  * @apiPermission none
  *
- * @apiParam {String} email Adres email.
- * @apiParam {String{8..50}} password Hasło.
- * @apiParam {Boolean=1} rules Akceptacja regulaminu.
+ * @apiParam {String} email Email address.
+ * @apiParam {String{8..50}} password Password.
+ * @apiParam {Boolean=1} rules Rules.
  *
- * @apiSampleRequest https://fapi.dev/register
+ * @apiSampleRequest https://api.dev/register
  *
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
  *     {
  *         "status": 10
- *         "email": "piotr2@codeexpert.pl",
+ *         "email": "mail@example.com",
  *         "created_at": "2017-07-04 21:24:07",
  *         "updated_at": "2017-07-04 21:24:07",
  *     }
@@ -43,15 +36,15 @@ use yii\rest\Controller;
  *     [
  *          {
  *              "field": "password",
- *              "message": "Hasło nie może pozostać bez wartości."
+ *              "message": "Password is required."
  *          },
  *          {
  *              "field": "email",
- *              "message": "Email \"piotr@codeexpert.pl\" jest już w użyciu."
+ *              "message": "Email \"mail@example.com\" has already been taken."
  *          },
  *          {
  *              "field": "rules",
- *              "message": "Akceptacja regulaminu jest wymagana"
+ *              "message": "Acceptance of the regulations is mandatory."
  *          }
  *     ]
  */

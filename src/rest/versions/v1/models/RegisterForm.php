@@ -3,39 +3,53 @@
  * Copyright (c) 2017. Piotr Grzelka <piotr.grzelka@idealia.pl>
  */
 
-/**
- * Created by PhpStorm.
- * User: piotrek
- * Date: 04.07.17
- * Time: 10:35
- */
 
 namespace rest\versions\v1\models;
-
 
 use common\models\User;
 use yii\base\Exception;
 
+/**
+ * Class RegisterForm
+ * @package rest\versions\v1\models
+ */
 class RegisterForm extends User
 {
 
+    /**
+     * @var String User new password
+     */
     public $password;
+
+    /**
+     * @var boolean Did user accept rules?
+     */
     public $rules;
 
+    /**
+     * @inheritdoc
+     */
     public function rules()
     {
         return [
             [['email', 'password'], 'required'],
             ['email', 'email'],
             ['email', 'unique'],
-            ['password', 'string', 'min' => 8],
+            [
+                'password', 'string', 'min' => 8,
+                'message' => \Yii::t('app', 'Password is too weak.')
+            ],
             [
                 'rules', 'required', 'requiredValue' => 1,
-                'message' => \Yii::t('app', 'Akceptacja regulaminu jest wymagana')
+                'message' => \Yii::t('app', 'Acceptance of the regulations is mandatory.')
             ]
         ];
     }
 
+    /**
+     * @return bool
+     * @throws Exception
+     */
     public function register()
     {
         if (!$this->validate()) {
@@ -43,20 +57,23 @@ class RegisterForm extends User
         }
 
         $this->setPassword($this->password);
-        if (!$this->save(false)) {
+        if (!$this->insert(false)) {
             throw new Exception("There is an error?");
         }
 
         return true;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function attributeLabels()
     {
         return array_merge(
             parent::attributeLabels(),
             [
-                'password' => \Yii::t('app', 'Hasło'),
-                'rules' => \Yii::t('app', 'Regulamin'),
+                'password' => \Yii::t('app', 'Password'),
+                'rules' => \Yii::t('app', 'Rules'),
             ]
         );
     }

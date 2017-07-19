@@ -4,7 +4,7 @@
  */
 
 return [
-    'id' => 'basic-console',
+    'id' => 'console',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'app\commands',
