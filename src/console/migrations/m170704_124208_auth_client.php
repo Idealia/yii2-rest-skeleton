@@ -10,7 +10,7 @@ class m170704_124208_auth_client extends Migration
     public function safeUp()
     {
         $this->insert('oauth2_client', [
-            'client_id' => '232af83f-1013-4729-bce2-8a19af6b9240',
+            'client_id' => Yii::$app->security->generateRandomString(80),
             'client_secret' => '',
             'redirect_uri' => '',
             'created_at' => time(),
@@ -22,9 +22,8 @@ class m170704_124208_auth_client extends Migration
 
     public function safeDown()
     {
-        echo "m170704_124208_auth_client cannot be reverted.\n";
-
-        return false;
+        $this->delete('oauth2_client');
+        return true;
     }
 
 }
