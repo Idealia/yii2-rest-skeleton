@@ -12,7 +12,7 @@ Thumbs.db
 /vendor
 /src/rest/web/index.php
 /yii
-/doc/
+/api-doc/
 /src/console/config/local.php
 /src/common/config/local.php
 /src/rest/config/local.php
