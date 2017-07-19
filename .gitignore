@@ -10,15 +10,16 @@ Thumbs.db
 
 /runtime
 /vendor
-/src/rest/web/index.php
 /yii
 /api-doc/
 /src/console/config/local.php
+/src/console/runtime/logs/app.log
 /src/common/config/local.php
-/src/rest/config/local.php
 /src/common/config/test.php
+/src/rest/config/local.php
+/src/rest/web/assets
+/src/rest/web/index.php
 /tests/_support/
 /tests/_output/
 !/tests/_support/.gitkeep
 !/tests/_output/.gitkeep
-/src/console/runtime/logs/app.log
