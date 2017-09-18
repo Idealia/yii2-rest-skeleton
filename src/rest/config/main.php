@@ -43,7 +43,6 @@ $config = [
             'parsers' => [
                 'application/json' => [
                     'class' => 'yii\web\JsonParser',
-                    'prettyPrint' => true
                 ]
             ],
         ],

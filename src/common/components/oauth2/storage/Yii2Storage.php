@@ -76,7 +76,7 @@ class Yii2Storage extends Component
     public function getClientDetails($client_id)
     {
         return (new Query())
-            ->from('oauth_clients')
+            ->from('oauth_client')
             ->where([
                 'client_id' => $client_id
             ])
@@ -113,7 +113,7 @@ class Yii2Storage extends Component
     public function getAccessToken($oauth_token)
     {
         $token = (new Query())
-            ->from('oauth_access_tokens')
+            ->from('oauth_access_token')
             ->where(['access_token' => $oauth_token])
             ->one();
 
@@ -136,7 +136,7 @@ class Yii2Storage extends Component
             $st = $db
                 ->createCommand()
                 ->update(
-                    'oauth_access_tokens',
+                    'oauth_access_token',
                     [
                         'client_id' => $client_id,
                         'expires' => $expires,
@@ -150,7 +150,7 @@ class Yii2Storage extends Component
         } else {
             $st = $db->createCommand()
                 ->insert(
-                    'oauth_access_tokens',
+                    'oauth_access_token',
                     [
                         'access_token' => $oauth_token,
                         'client_id' => $client_id,
@@ -180,7 +180,7 @@ class Yii2Storage extends Component
     public function getRefreshToken($refresh_token)
     {
         $token = (new Query())
-            ->from('oauth_refresh_tokens')
+            ->from('oauth_refresh_token')
             ->where(['refresh_token' => $refresh_token])
             ->one();
 
@@ -201,7 +201,7 @@ class Yii2Storage extends Component
         \Yii::$app->db
             ->createCommand()
             ->insert(
-                'oauth_refresh_tokens',
+                'oauth_refresh_token',
                 [
                     'refresh_token' => $refresh_token,
                     'client_id' => $client_id,
@@ -221,7 +221,7 @@ class Yii2Storage extends Component
         \Yii::$app
             ->db
             ->createCommand()
-            ->delete('oauth_refresh_tokens', [
+            ->delete('oauth_refresh_token', [
                 'refresh_token' => $refresh_token
             ])
             ->execute();

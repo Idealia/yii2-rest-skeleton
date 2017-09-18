@@ -17,6 +17,7 @@ Thumbs.db
 /src/common/config/local.php
 /src/rest/config/local.php
 /src/common/config/test.php
+/src/rest/web/assets
 /tests/_support/
 /tests/_output/
 !/tests/_support/.gitkeep
