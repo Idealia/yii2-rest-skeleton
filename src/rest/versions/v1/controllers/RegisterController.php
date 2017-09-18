@@ -6,6 +6,7 @@
 
 namespace rest\versions\v1\controllers;
 
+use common\components\oauth2\filters\Auth;
 use rest\versions\v1\models\RegisterForm;
 use yii\rest\Controller;
 
@@ -50,12 +51,12 @@ use yii\rest\Controller;
  */
 class RegisterController extends Controller
 {
+
     public function actionIndex()
     {
         $model = new RegisterForm();
-        if ($model->load(\Yii::$app->request->post(), '') && $model->register()) {
-            $model->refresh();
-        }
+        $model->load(\Yii::$app->request->post(), '');
+        $model->register();
         return $model;
     }
 }

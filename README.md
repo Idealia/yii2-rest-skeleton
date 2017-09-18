@@ -43,3 +43,19 @@ then open [http://localhost:8090](http://localhost:8090) in Your browser
 ```bash
 vendor/bin/codecept run 
 ```
+
+
+## Sample requests
+For Burp Suite or other REST client.
+###### Before start you can run this command to start web server:
+```bash
+php -S localhost:8090 -t src/rest/web/
+```
+
+### Register
+
+### Login
+
+### Logout
+
+

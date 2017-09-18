@@ -23,7 +23,7 @@ use conquer\oauth2\OAuth2IdentityInterface;
  * @property integer $created_at
  * @property integer $updated_at
  */
-class User extends \yii\db\ActiveRecord implements IdentityInterface, OAuth2IdentityInterface
+class User extends \yii\db\ActiveRecord implements IdentityInterface
 {
     /**
      * @inheritdoc
@@ -157,8 +157,8 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface, OAuth2Iden
 
     /**
      * Find idenity by username
-     * @param $username current username
-     * @return IdentityInterface
+     * @param $username String
+     * @return static
      */
     public static function findIdentityByUsername($username)
     {

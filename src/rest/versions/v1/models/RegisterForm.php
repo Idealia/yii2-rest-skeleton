@@ -61,6 +61,8 @@ class RegisterForm extends User
             throw new Exception("There is an error?");
         }
 
+        $this->refresh();
+
         return true;
     }
 
