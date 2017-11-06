@@ -10,7 +10,7 @@ class m170704_112144_oauth2 extends \common\components\db\Migration
     public function safeUp()
     {
 
-        $this->createTable('oauth2_client', [
+        $this->createTable('oauth_client', [
             'client_id' => $this->string(80),
             'client_secret' => $this->string(80),
             'redirect_uri' => $this->text(),
@@ -22,7 +22,7 @@ class m170704_112144_oauth2 extends \common\components\db\Migration
             'updated_by' => $this->integer(),
         ]);
 
-        $this->createTable('oauth2_access_token', [
+        $this->createTable('oauth_access_token', [
             'access_token' => $this->string(40),
             'client_id' => $this->string(80),
             'user_id' => $this->integer(),
@@ -30,7 +30,7 @@ class m170704_112144_oauth2 extends \common\components\db\Migration
             'scope' => $this->text()
         ]);
 
-        $this->createTable('oauth2_refresh_token', [
+        $this->createTable('oauth_refresh_token', [
             'refresh_token' => $this->string(40),
             'client_id' => $this->string(80),
             'user_id' => $this->integer(),
@@ -38,7 +38,7 @@ class m170704_112144_oauth2 extends \common\components\db\Migration
             'scope' => $this->text()
         ]);
 
-        $this->createTable('oauth2_authorization_code', [
+        $this->createTable('oauth_authorization_code', [
             'access_token' => $this->string(40),
             'client_id' => $this->string(80),
             'user_id' => $this->integer(),
@@ -47,10 +47,10 @@ class m170704_112144_oauth2 extends \common\components\db\Migration
             'scope' => $this->text()
         ]);
 
-        $this->addPrimaryKey('oauth2_client_pkey', 'oauth2_client', 'client_id');
-        $this->addPrimaryKey('oauth2_access_token_pkey', 'oauth2_access_token', 'access_token');
-        $this->addPrimaryKey('oauth2_refresh_token_pkey', 'oauth2_refresh_token', 'refresh_token');
-        $this->addPrimaryKey('oauth2_authorization_code_pkey', 'oauth2_authorization_code', 'access_token');
+        $this->addPrimaryKey('oauth_client_pkey', 'oauth_client', 'client_id');
+        $this->addPrimaryKey('oauth_access_token_pkey', 'oauth_access_token', 'access_token');
+        $this->addPrimaryKey('oauth_refresh_token_pkey', 'oauth_refresh_token', 'refresh_token');
+        $this->addPrimaryKey('oauth_authorization_code_pkey', 'oauth_authorization_code', 'access_token');
 
     }
 
