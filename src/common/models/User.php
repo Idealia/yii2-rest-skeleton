@@ -14,7 +14,7 @@ use conquer\oauth2\OAuth2IdentityInterface;
 /**
  * This is the model class for table "user".
  *
- * @property string $id
+ * @property integer $id
  * @property string $email
  * @property string $auth_key
  * @property string $password_hash
@@ -58,8 +58,7 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
     {
         return [
             [['id', 'email', 'password_hash', 'created_at', 'updated_at'], 'required'],
-            [['status', 'created_at', 'updated_at'], 'integer'],
-            [['id'], 'string', 'max' => 36],
+            [['id', 'status', 'created_at', 'updated_at'], 'integer'],
             [['email', 'password_hash', 'password_reset_token'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
             [['email'], 'unique'],
