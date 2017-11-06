@@ -9,7 +9,7 @@ class m170704_124208_auth_client extends Migration
 {
     public function safeUp()
     {
-        $this->insert('oauth2_client', [
+        $this->insert('oauth_client', [
             'client_id' => Yii::$app->security->generateRandomString(80),
             'client_secret' => '',
             'redirect_uri' => '',
