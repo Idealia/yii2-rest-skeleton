@@ -107,7 +107,7 @@ class TokenAuth extends AuthMethod
             if (!$accessToken = AccessToken::findOne(['access_token' => $token])) {
                 throw new InvalidGrant('The access token provided is invalid.');
             }
-            if ($accessToken->expires < time()) {
+            if ($accessToken->expires < date(DATE_ISO8601)) {
                 throw new InvalidGrant('The access token provided has expired.');
             }
             $this->_accessToken = $accessToken;
