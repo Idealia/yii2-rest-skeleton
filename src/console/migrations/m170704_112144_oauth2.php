@@ -16,8 +16,8 @@ class m170704_112144_oauth2 extends \common\components\db\Migration
             'redirect_uri' => $this->text(),
             'grant_type' => $this->text(),
             'scope' => $this->text(),
-            'created_at' => $this->integer(),
-            'updated_at' => $this->integer(),
+            'created_at' => 'TIMESTAMPTZ',
+            'updated_at' => 'TIMESTAMPTZ',
             'created_by' => $this->integer(),
             'updated_by' => $this->integer(),
         ]);
@@ -26,7 +26,7 @@ class m170704_112144_oauth2 extends \common\components\db\Migration
             'access_token' => $this->string(40),
             'client_id' => $this->string(80),
             'user_id' => $this->integer(),
-            'expires' => $this->integer(),
+            'expires' => 'TIMESTAMPTZ',
             'scope' => $this->text()
         ]);
 
@@ -34,7 +34,7 @@ class m170704_112144_oauth2 extends \common\components\db\Migration
             'refresh_token' => $this->string(40),
             'client_id' => $this->string(80),
             'user_id' => $this->integer(),
-            'expires' => $this->integer(),
+            'expires' => 'TIMESTAMPTZ',
             'scope' => $this->text()
         ]);
 
@@ -43,7 +43,7 @@ class m170704_112144_oauth2 extends \common\components\db\Migration
             'client_id' => $this->string(80),
             'user_id' => $this->integer(),
             'redirect_uri' => $this->text(),
-            'expires' => $this->integer(),
+            'expires' => 'TIMESTAMPTZ',
             'scope' => $this->text()
         ]);
 
