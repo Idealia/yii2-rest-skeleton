@@ -130,7 +130,7 @@ class Yii2Storage extends Component
     public function setAccessToken($oauth_token, $client_id, $user_id, $expires, $scope = null)
     {
         $db = \Yii::$app->db;
-        $expires = date('Y-m-d H:i:s', $expires);
+        $expires = date(DATE_ISO8601, $expires);
 
         if ($this->getAccessToken($oauth_token)) {
             $st = $db
@@ -196,7 +196,7 @@ class Yii2Storage extends Component
      */
     public function setRefreshToken($refresh_token, $client_id, $user_id, $expires, $scope = null)
     {
-        $expires = date('Y-m-d H:i:s', $expires);
+        $expires = date(DATE_ISO8601, $expires);
 
         \Yii::$app->db
             ->createCommand()
