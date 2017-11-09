@@ -1,16 +1,8 @@
 <?php
 /**
- * @copyright Copyright (c) 2016. nGroup System Sp. z o.o.
- * @name eTrener
- * @version 0.0.1
- * @link http://ngroup.pl
- */
-
-/**
- * Created by PhpStorm.
- * User: piotrek
- * Date: 17.11.16
- * Time: 10:41
+ * Copyright (c) 2017. Piotr Grzelka <piotr.grzelka@ngroup.pl>
+ * @author: Piotr Grzelka <piotr.grzelka@ngroup.pl>
+ * @author: Edmund Kawalec <edmund.kawalec@ngroup.pl>
  */
 
 namespace common\components\oauth2\storage;
@@ -168,7 +160,7 @@ class Yii2Storage extends Component
         \Yii::$app
             ->db
             ->createCommand()
-            ->delete('oauth_access_tokens', [
+            ->delete('oauth_access_token', [
                 'access_token' => $token
             ])
             ->execute();
